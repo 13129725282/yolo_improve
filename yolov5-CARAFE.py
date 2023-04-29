@@ -38,6 +38,7 @@ class CARAFE(nn.Module):
         X = torch.einsum('bkhw,bckhw->bchw', [W, X])    # b * c * h_ * w_
         return X
 
+# 下面是直接加到yolo.pyd 中的 elif那一块
 elif m is CARAFE:
     c2 = ch[f]
     args = [c2, *args]
